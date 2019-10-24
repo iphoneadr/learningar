@@ -82,7 +82,8 @@
             </video>
         </a-assets>
         <a-marker preset="hiro" vidhandler>
-            <a-video src="#vid" width="1.78" height="1" rotation="270 0 0"></a-video>
+                <a-plane position='1 2 0' scale="2 2 2" width="2" rotation="-90 0 0" 
+                material='transparent:true; opacity: 0.7; src:#vid'></a-plane>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
