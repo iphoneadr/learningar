@@ -15,9 +15,9 @@
                     <video type="video/mp4" id="vid" preload="false" loop="false" src="mov_bbb.mp4"></video>
                 </a-assets>
     
-                <a-marker preset="hiro">
+                <a-marker-camera preset="hiro">
                     <a-video vidhandler  position="0 0.2 0" src="#vid"></a-video>
-                </a-marker>
+                </a-marker-camera>
             <!--a-box position='0 0.5 0' material='color: yellow;'></a-box>
                 <a-marker-camera preset="hiro"></a-marker-camera>
             <a-entity camera></a-entity-->
@@ -29,7 +29,7 @@
           document.querySelector("#vid").pause(); //reference to the video
          },
          tick:function(){  
-         if(document.querySelector("a-marker").object3D.visible == true){
+         if(document.querySelector("a-marker-camera").object3D.visible == true){
            if(!this.toggle){
              this.toggle = true;
              document.querySelector("#vid").play();
