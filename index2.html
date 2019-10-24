@@ -48,9 +48,9 @@
                 <source src="mov_bbb.mp4">
             </video>
         </a-assets>
-        <a-marker id="memarker" preset="hiro" vidhandler>
-            <a-plane material='transparent:true;src:#vid'></a-plane>
-        </a-marker>
+        <a-marker-camera id="memarker" preset="hiro" vidhandler>
+            <a-video vidhandler  position="0 0.2 0" src="#vid" rotation="90 180 0"></a-video>
+        </a-marker-camera>
         <a-entity camera></a-entity>
     </a-scene>
     <div class="footer">
