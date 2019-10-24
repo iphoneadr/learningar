@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-        <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 60; canvasWidth: 200; canvasHeight: 200'>
+        <a-scene  embedded arjs="debugUIEnabled:false; sourceType:webcam;">
                 <a-assets>
                     <video preload="false" id="vid" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline playsinline controls>
                         <source src="mov_bbb.mp4" type="video/mp4">
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-left">
                         <div class="onebleft">
-                            <button onclick="vid.playvid()" class="btn btnskips">Play (CHROME)</button>
+                            <button onclick="playvid()" class="btn btnskips">Play (CHROME)</button>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pull-right">
@@ -63,7 +63,7 @@
                 }
         
                 function playvid() {
-                    vid.play();
+                    document.querySelector("#vid").play();
                 }
             </script>
 </body>
