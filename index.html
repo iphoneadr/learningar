@@ -12,7 +12,9 @@
         <a-scene embedded arjs="debugUIEnabled:false; sourceType:webcam;">  
                 
                 <a-assets>
-                    <video type="video/mp4" id="vid" preload="false" loop="false" src="mov_bbb.mp4"></video>
+                    <video id="vid" preload="false" loop="false">
+                            <source src="mov_bbb.mp4" type="video/mp4">
+                    </video>
                 </a-assets>
     
                 <a-marker-camera preset="hiro">
