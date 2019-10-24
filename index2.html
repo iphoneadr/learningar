@@ -10,35 +10,29 @@
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+
         AFRAME.registerComponent('vidhandler', {
-            init: function() {
-                this.toggle = false;
-                this.vid = document.querySelector("#vid");
-                this.vid.pause();
-            },
-            tick: function() {
-                if (this.el.object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        window.addEventListener('click', function () {
+  init: function () {
+    this.toggle = false;
+    this.vid = document.querySelector("#vid")
+    this.vid.pause()
+},
+tick:function(){
+   if(this.el.object3D.visible == true){
+     if(!this.toggle){
+       /* window.addEventListener('click', function () {
   var v = document.querySelector('#vid');
   v.play();
+});*/
+       this.toggle = true;
+       this.vid.play();
+    }
+  }else{
+    this.toggle = false;
+    this.vid.pause();
+  }
+ }
 });
-                    }
-                } else {
-                    this.toggle = false;
-                    this.vid.pause();
-                }
-            }
-        });
-
-        function refrespage() {
-            location.reload();
-        }
-
-        function playvid() {
-            vid.play();
-        }
     </script>
     <!-- IF YOU WANT TO PLAY ALPHA VIDEO THEN IT SHOULD BE IN WEBM FORMAT ........ 
     FOR NORMAL VIDEO - MP4 or OGG -->
@@ -77,9 +71,7 @@
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs="sourceType:webcam;">
         <a-assets>
-            <video preload="auto" id="vid" response-type="arraybuffer" loop="false" crossorigin="anonymous">
-                <source src="mov_bbb.mp4">
-            </video>
+            <video id="vid" src="mov_bbb.mp4" loop="true" crossorigin></video>
         </a-assets>
         <a-marker preset="hiro" vidhandler>
                 <a-plane position='1 2 0' scale="2 2 2" width="2" rotation="-90 0 0" 
