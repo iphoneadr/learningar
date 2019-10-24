@@ -21,10 +21,12 @@
                     if (!this.toggle) {
                         this.toggle = true;
                         $('video').get(0).play();
+                        alert("true")
                     }
                 } else {
                     this.toggle = false;
                     $('video').get(0).pause();
+                    alert("false")
                 }
             }
         });
@@ -48,7 +50,7 @@
                 <source src="mov_bbb.mp4">
             </video>
         </a-assets>
-        <a-marker-camera id="memarker" preset="hiro" vidhandler>
+        <a-marker-camera preset="hiro" vidhandler>
             <a-video vidhandler  position="0 0.2 0" src="#vid" rotation="90 180 0"></a-video>
         </a-marker-camera>
         <a-entity camera></a-entity>
