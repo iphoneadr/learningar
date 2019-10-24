@@ -20,12 +20,11 @@
 tick:function(){
    if(this.el.object3D.visible == true){
      if(!this.toggle){
-       /* window.addEventListener('click', function () {
-  var v = document.querySelector('#vid');
-  v.play();
-});*/
        this.toggle = true;
-       this.vid.play();
+       
+       window.addEventListener('click', function () {
+            this.vid.play();
+        });
     }
   }else{
     this.toggle = false;
