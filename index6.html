@@ -11,7 +11,20 @@
     <body style='margin : 0px; overflow: hidden;'>
         <a-scene embedded arjs>
             <a-marker preset="hiro"></a-marker>
-            <a-entity text="value: Hello World;"></a-entity>
+            <a-entity position="2 2 0">
+                    <a-entity mixin="marker" position="0 0 0.01"></a-entity>
+                    <a-entity position="0 0 0" geometry="primitive: plane; width: auto; height: auto" material="color: #333"
+                              text="color: yellow; align: left; value: [LEFT ALIGNED]; width: 2; ">
+                    </a-entity>
+                    <a-entity mixin="marker" position="0 0.2 0.01"></a-entity>
+                    <a-entity position="0 0.2 0" geometry="primitive: plane; width: auto; height: auto" material="color: #333"
+                              text="color: red; align: right; value: [RIGHT ALIGNED]; width: 2; ">
+                    </a-entity>
+                    <a-entity mixin="marker" position="0 0.4 0.01"></a-entity>
+                    <a-entity position="0 0.4 0" geometry="primitive: plane; width: auto; height: auto" material="color: #eee"
+                              text="color: blue; align: center; value: [CENTER ALIGNED]; width: 2; ">
+                    </a-entity>
+                  </a-entity>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
