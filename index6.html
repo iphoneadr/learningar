@@ -13,17 +13,17 @@
             init: function() {
                 this.toggle = false;
                 this.textarea = document.querySelector("#box-blue");
-                this.textarea.visible = false;
+                this.textarea.setAttribute('visible', false);
             },
             tick: function() {
                 if (this.vid.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
-                        this.textarea.visible  = true;
+                        this.textarea.setAttribute('visible', true);
                     }
                 } else {
                     this.toggle = false;
-                    this.textarea.visible  = false;
+                    this.textarea.setAttribute('visible', false);
                 }
             }
         });
