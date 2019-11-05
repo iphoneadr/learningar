@@ -9,40 +9,11 @@
     <title>Document</title>
 </head>
     <body style='margin : 0px; overflow: hidden;'>
-        <a-scene embedded arjs="debugUIEnabled:false; sourceType:webcam;">  
-                
-                <a-assets>
-                    <video id="vid" preload="false" loop="false">
-                            <source src="mov_bbb.mp4" type="video/mp4">
-                    </video>
-                </a-assets>
-    
-                <a-marker-camera preset="hiro">
-                    <a-video vidhandler  position="0 0.2 0" src="#vid" rotation="90 180 0"></a-video>
-                </a-marker-camera>
-            <!--a-box position='0 0.5 0' material='color: yellow;'></a-box>
-                <a-marker-camera preset="hiro"></a-marker-camera>
-            <a-entity camera></a-entity-->
+        <a-scene embedded arjs>
+            <a-marker preset="hiro">
+                <a-box position='0 0.5 0' material='color: yellow;'></a-box>
+            </a-marker>
+            <a-entity camera></a-entity>
         </a-scene>
-        <script>
-        AFRAME.registerComponent('vidhandler', {
-         init: function () {
-          this.toggle = false;
-          document.querySelector("#vid").pause(); //reference to the video
-         },
-         tick:function(){  
-         if(document.querySelector("a-marker-camera").object3D.visible == true){
-           if(!this.toggle){
-             this.toggle = true;
-             document.querySelector("#vid").play();
-           }
-         }else{
-           this.toggle = false;
-           document.querySelector("#vid").pause();
-         }
-         }
-         });
-      
-        </script>
     </body>
 </html>
