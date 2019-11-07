@@ -28,15 +28,15 @@
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
         <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
             <a-assests>
-                <img src="mg.png" id="scope" style="z-index: 1;" />
-                <img src="fg.png" id="text" style="z-index: 2;" />
-                <img src="bg.png" id="structure" style="z-index: 0;" />
+                <img src="mg.png" id="scope" />
+                <img src="fg.png" id="text" />
+                <img src="bg.png" id="structure" />
             </a-assests>
             
             <a-marker preset='hiro' piratehandler>
-                <a-entity position='0 0 0' rotation="-90 0 0" material='alphaTest: 0.5;src:#scope; width:1; height:1;opacity:0.85;' scale='3 3 3'></a-entity>
-                <a-entity position='0 0 0' rotation="-90 0 0" material='alphaTest: 0.5;src:#text; width:2; height:2;opacity:0.55;'></a-entity>
-                <a-entity position='0 0 -1' rotation="-90 0 0" material='alphaTest: 0.5;src:#structure; width:2; height:2;opacity:0.89;' scale='2 2 2'></a-entity>
+                <a-plane position='0 0 -2.2' rotation="-90 0 0" material='alphaTest: 0.5;src:#scope; width:1; height:1; opacity:0.85;' scale='3 3 3'></a-plane>
+                <a-plane position='0 0 -2.1' rotation="-90 0 0" material='alphaTest: 0.5;src:#text; width:2; height:2; opacity:0.55;'></a-plane>
+                <a-plane position='0 0 -2' rotation="-90 0 0" material='alphaTest: 0.5;src:#structure; width:2; height:2; opacity:0.89;' scale='2 2 2'></a-plane>
                 
             </a-marker>
             
