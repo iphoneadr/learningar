@@ -16,16 +16,15 @@
                     if (this.el.object3D.visible == true) {
                         if (!this.toggle) {
                             this.toggle = true;
-                            /*window.addEventListener('click', function() {
-                                entity.components.sound.playSound();
-                            });*/
                             $( window ).click(function() {
-                                $('.piratehandler').hide();
+                                $('.piratehandler').attr('opacity','0');
                                 $('.piratehandlertext').attr('opacity','1');
                             });
                         }
                     } else {
                         this.toggle = false;
+                        $('.piratehandler').attr('opacity','1');
+                        $('.piratehandlertext').attr('opacity','0');
                     }
                 }
             });
