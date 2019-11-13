@@ -16,6 +16,9 @@
                     if (this.el.object3D.visible == true) {
                         if (!this.toggle) {
                             this.toggle = true;
+                            /*window.addEventListener('click', function() {
+                                entity.components.sound.playSound();
+                            });*/
                         }
                     } else {
                         this.toggle = false;
@@ -37,9 +40,8 @@
                 <a-plane position='0 0.4 -0.2' rotation="-90 0 0" material='alphaTest: 0.5;src:#scope; width:1; height:1; opacity:0.98;' scale='3 3 3'></a-plane>
                 <a-plane position='0 0.8 1' rotation="-90 0 0" material='alphaTest: 0.5;src:#text; width:3; height:1; opacity:1;'scale='2 1 1'></a-plane>
                 <a-plane position='0 0.1 0' rotation="-90 0 0" material='alphaTest: 0.5;src:#structure; width:2; height:2; opacity:0.90;' scale='2 2 2'></a-plane>   
-                <a-text align="center" font="kelsonsans" color="white" value="Puy de Sancy, France" width="3" position='0 1 0' rotation="-90 0 0" text=""></a-text>
+                <a-text align="center" font="kelsonsans" color="red" value="Puy de Sancy, France" width="2" position='0 1 0' rotation="-90 0 0" text="" opacity="1"></a-text>
             </a-marker>
-            <a-entity text="value: Hello World;"></a-entity>
             <a-entity camera></a-entity>
         </a-scene>  
         <!-- Google Analytics -->
