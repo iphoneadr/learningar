@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.5/aframe/build/aframe-ar.js"></script>
+    <title>Document</title>
+</head>
+<script>
+        AFRAME.registerComponent('testText', {
+            init: function() {
+                this.toggle = false;
+            },
+            tick: function() {
+                if (this.vid.visible == true) {
+                    if (!this.toggle) {
+                        this.toggle = true;
+                    }
+                } else {
+                    this.toggle = false;
+                }
+            }
+        });
+    </script>
+    <body style='margin : 0px; overflow: hidden;'>
+        <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
+            <a-marker preset="hiro" testText>
+
+                <a-text align="center" font="kelsonsans" color="white" value="Puy de Sancy, France" width="3" position='0 1 0' rotation="-90 0 0" text=""></a-text> 
+            
+            </a-marker>
+                           
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
+
+
+<!--
+User scans QR Code 
+QR asks for permission to open site
+Site then requests permission for camera 
+Camera then scans QR Code and shows users AR
+
+-->
