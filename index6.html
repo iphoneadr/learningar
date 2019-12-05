@@ -11,18 +11,16 @@
             AFRAME.registerComponent('polling', {
                 init: function() {
                     this.toggle = false;
+                    const happy = document.querySelector("#happy");
                 },
                 tick: function() {
                     if (this.el.object3D.visible == true) {
                         if (!this.toggle) {
                             this.toggle = true;
-                            $("#happy").click(function(e){
-                                e.stopPropagation();
-                                alert('im happy');
-                            });
-                            $("#sad").click(function(e){
-                                e.stopPropagation();
-                                alert('im sad');
+
+                            // every click, we make our model grow in size :)
+                            happy.addEventListener('click', function(ev, target){
+                                alert('happy');
                             });
                         }
                     } else {
