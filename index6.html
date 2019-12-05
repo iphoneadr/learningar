@@ -17,11 +17,11 @@
                         if (!this.toggle) {
                             this.toggle = true;
                             $("#happy").click(function(e){
-                                e.preventDefault;
+                                e.stopPropagation();
                                 alert('im happy');
                             });
                             $("#sad").click(function(e){
-                                e.preventDefault;
+                                e.stopPropagation();
                                 alert('im sad');
                             });
                         }
