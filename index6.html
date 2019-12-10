@@ -28,10 +28,9 @@
             AFRAME.registerComponent('face', {
                 init: function () {
                     var lastIndex = -1;
-                    var COLORS = ['red', 'green', 'blue'];
                     this.el.addEventListener('click', function (evt) {
                     lastIndex = (lastIndex + 1) % COLORS.length;
-                    alert('I was clicked at: ', evt.detail.intersection.point);
+                    alert('I was clicked: ', this.el.object3D.el.attributes[2]['name']);
                     });
                 },
                 multiple: true
@@ -40,7 +39,7 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" cursor="rayOrigin: mouse">
+        <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
             <a-assests>
                 <img src="assets/png/test/Smiling_Face_Emoji.png" id="happy" />
                 <img src="assets/png/test/Sad_Emoji.png" id="sad" />
@@ -55,7 +54,7 @@
             <a-entity camera look-controls>
                 <a-entity cursor="fuse: true; fuseTimeout: 500"
                             position="0 0 -1"
-                            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                            geometry="primitive: ring;"
                             material="color: black; shader: flat">
                 </a-entity>
             </a-entity>
