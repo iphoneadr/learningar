@@ -47,8 +47,10 @@
             
             <a-marker smooth="false" preset="hiro" polling>
                 <a-text  position='0 1 0' rotation="-90 0 0" align="center" font="kelsonsans" color="green" value="Rate this class" width="3" text=""></a-text> 
-                <a-plane raycaster="objects:.clickable; far:0.5;" position='-0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#happy; width:1; height:1; opacity:0.75;' scale='1 1 1' face__happy></a-plane>
-                <a-plane raycaster="objects:.clickable; far:0.5;" position='0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#sad; width:1; height:1; opacity:0.75;'scale='1 1 1' face__sad></a-plane>             
+                <a-plane far:0.5;" position='-0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#happy; width:1; height:1; opacity:0.75;' scale='1 1 1' face__happy class="face__happy"></a-plane>
+                <a-plane position='0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#sad; width:1; height:1; opacity:0.75;'scale='1 1 1' face__sad class="face__sad"></a-plane>     
+                <a-entity raycaster="objects: .face__happy" cursor></a-entity>
+                <a-entity raycaster="objects: .face__sad" cursor></a-entity>        
             </a-marker>
 
             <a-entity camera look-controls>
