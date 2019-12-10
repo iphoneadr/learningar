@@ -39,7 +39,7 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" cursor="rayOrigin: mouse">
+        <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" cursor="rayOrigin: cursor">
             <a-assests>
                 <img src="assets/png/test/Smiling_Face_Emoji.png" id="happy" />
                 <img src="assets/png/test/Sad_Emoji.png" id="sad" />
@@ -47,8 +47,8 @@
             
             <a-marker smooth="false" preset="hiro" polling>
                 <a-text  position='0 1 0' rotation="-90 0 0" align="center" font="kelsonsans" color="green" value="Rate this class" width="3" text=""></a-text> 
-                <a-plane position='-0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#happy; width:1; height:1; opacity:0.75;' scale='1 1 1' face__happy></a-plane>
-                <a-plane position='0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#sad; width:1; height:1; opacity:0.75;'scale='1 1 1' face__sad></a-plane>             
+                <a-plane cursor raycaster="far: 20; interval: 1000; objects: .clickable" position='-0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#happy; width:1; height:1; opacity:0.75;' scale='1 1 1' face__happy></a-plane>
+                <a-plane cursor raycaster="far: 20; interval: 1000; objects: .clickable" position='0.70 0.4 -0.72' rotation="-90 0 0" material='alphaTest: 0.5;src:#sad; width:1; height:1; opacity:0.75;'scale='1 1 1' face__sad></a-plane>             
             </a-marker>
 
             <a-entity camera look-controls>
