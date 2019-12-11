@@ -29,7 +29,7 @@
             AFRAME.registerComponent('face', {
                 init: function () {
                     this.el.addEventListener('click', function (evt) {
-                        console.log(evt.target.dataset);
+                        alert("I'm feeling " + evt.target.dataset.poll);
                     });
                 },
                 multiple: true
