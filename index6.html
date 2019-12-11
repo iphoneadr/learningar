@@ -29,7 +29,7 @@
             AFRAME.registerComponent('face', {
                 init: function () {
                     this.el.addEventListener('click', function (evt) {
-                        alert('I was clicked: '+ this.el);
+                        console.log(evt);
                     });
                 },
                 multiple: true
@@ -55,7 +55,7 @@
                               scale="0.01 0.01 0.01"
                               cursor="fuse: true; fuseTimeout: 500"
                               geometry="primitive: ring"
-                              material="color: black; shader: flat" 
+                              material="color: red; shader: flat" 
                               raycaster="interval:1000; objects: .face;">
                     </a-entity>
                   </a-entity>
