@@ -26,7 +26,7 @@
                 }
             });
 
-            AFRAME.registerComponent('face', {
+            /*AFRAME.registerComponent('face', {
                 init: function () {
                     var lastIndex = -1;
                     this.el.addEventListener('click', function (evt) {
@@ -34,7 +34,11 @@
                     });
                 },
                 multiple: true
-            });
+            });*/
+            var box = document.querySelector('face');
+  box.addEventListener('click', function () {
+    alert('box clicked');
+  });
         </script>
     </head>
     <body style='margin : 0px; overflow: hidden;'>
