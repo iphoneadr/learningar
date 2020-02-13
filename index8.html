@@ -1,23 +1,19 @@
 <!doctype HTML>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    
-        <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+        <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
         <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <!-- Tipatat Chennavasin - https://poly.google.com/user/8ri62AdjHrC - creator of Low Poly Mew -->
         <a-scene embedded arjs="sourceType: webcam; ">
-            <a-assests>
-                <a-asset-item id="PolyModel" src="assets/gltf/sample3/scene.gltf">
-            </a-assests>
             
             <a-marker preset="hiro" lakehouse>
                 <a-entity
                     animation-mixer
-                    gltf-model-next="#PolyModel"
+                    gltf-model-next="src:url(assets/gltf/sample3/scene.gltf);"
                     position="0 0 0"
                     scale="0.25 0.25 0.25">
                 </a-entity>
