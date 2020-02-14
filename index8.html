@@ -7,16 +7,18 @@
     </head>
     <body style='margin : 0px; overflow: hidden;'>
         <!-- Tipatat Chennavasin - https://poly.google.com/user/8ri62AdjHrC - creator of Low Poly Mew -->
-        <a-scene embedded arjs="sourceType: webcam; ">
+        <a-scene embedded vr-mode-ui="enabled: false;"  arjs="sourceType: webcam; debugUIEnabled: false; ">
             <a-assests>
                 <a-asset-item id="PolyModel" src="assets/gltf/sample3/scene.gltf">
             </a-assests>
             
             <a-marker preset="hiro" lakehouse>
                 <a-entity
-                    animation-mixer
                     gltf-model="#PolyModel"
-                    position="0 2 0.25" rotation="90 180 0" scale="0.01 0.01 0.01" animation-mixer="loop:repeat">
+                    position="0 2 0.25" 
+                    rotation="90 180 0" 
+                    scale="0.01 0.01 0.01" 
+                    animation-mixer="loop:repeat">
                 </a-entity>
             </a-marker>
     
