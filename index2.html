@@ -13,19 +13,19 @@
             init: function() {
                 this.toggle = false;
                 this.vid = document.querySelector("#vid")
-                this.vid.pause()
+                //this.vid.pause()
             },
             tick: function() {
                 if (this.el.object3D.visible == true) {
                     if (!this.toggle) {
                         this.toggle = true;
-                        window.addEventListener('click', function() {
+                        /*window.addEventListener('click', function() {
                             this.vid.play();
-                        });
+                        });*/
                     }
                 } else {
                     this.toggle = false;
-                    this.vid.pause();
+                    //this.vid.pause();
                 }
             }
         });
